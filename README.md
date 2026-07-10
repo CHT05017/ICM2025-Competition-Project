@@ -3,9 +3,9 @@
 <div align="center">
 
 <p>
-  <strong>Haotong Cheng(程浩桐)</strong><sup>1*</sup>&emsp;
+  <strong>Haotong Cheng</strong>(程浩桐)<sup>1*</sup>&emsp;
   <strong>Zimiao Gu</strong>(顾子淼)<sup>1</sup>&emsp;
-  <strong>Rongling Tan(谭茸柃)</strong><sup>1</sup>
+  <strong>Rongling Tan</strong>(谭茸柃)<sup>1</sup>
 </p>
 
 <p>
