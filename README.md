@@ -3,9 +3,9 @@
 <div align="center">
 
 <p>
-  <strong>Haotong Cheng</strong><sup>1*</sup>&emsp;
-  <strong>Zimiao Gu</strong><sup>1</sup>&emsp;
-  <strong>Rongling Tan</strong><sup>1</sup>
+  <strong>Haotong Cheng(程浩桐)</strong><sup>1*</sup>&emsp;
+  <strong>Zimiao Gu</strong>(顾子淼)<sup>1</sup>&emsp;
+  <strong>Rongling Tan(谭茸柃)</strong><sup>1</sup>
 </p>
 
 <p>
@@ -49,6 +49,7 @@ This work received the **Finalist Award (F Award)** in the 2025 ICM, placing the
 - Haotong Cheng
 - Zimiao Gu
 - Rongling Tan
+**Well done, Team!**
 
 ## Contact
 
