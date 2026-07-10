@@ -1,4 +1,4 @@
-# [ICM 2025 Competetion] Making Room for Agriculture: Ecosystem Modeling for Sustainable Farming
+# [ICM 2025 competition] Making Room for Agriculture: Ecosystem Modeling for Sustainable Farming
 
 <div align="center">
 
