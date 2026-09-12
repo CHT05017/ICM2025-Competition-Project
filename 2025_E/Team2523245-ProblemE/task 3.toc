@@ -1,0 +1,11 @@
+\contentsline {section}{\numberline {1}Introduction}{3}{}%
+\contentsline {section}{\numberline {2}Assumptions and Justifications}{3}{}%
+\contentsline {section}{\numberline {3}Notations}{3}{}%
+\contentsline {section}{\numberline {4}Removal of Herbicides---`` \textit {No More Chemicals!} ''}{3}{}%
+\contentsline {subsection}{\numberline {4.1}A Stable Ecosystem---A short term analysis}{3}{}%
+\contentsline {subsubsection}{\numberline {4.1.1}Higher Richness}{3}{}%
+\contentsline {subsubsection}{\numberline {4.1.2}Stronger Resistance}{4}{}%
+\contentsline {subsection}{\numberline {4.2}\textit {``Bring the bats back! ''}---A Long Term Solution}{5}{}%
+\contentsline {subsubsection}{\numberline {4.2.1}Bats' Interactions with Ecosystem}{5}{}%
+\contentsline {subsubsection}{\numberline {4.2.2}the Ecosystem Stability Outcome}{7}{}%
+\contentsline {subsection}{\numberline {4.3}Grass Snake---\textit {``Bats are not alone.''}}{8}{}%
