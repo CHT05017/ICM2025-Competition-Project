@@ -1,0 +1,26 @@
+任务一：对土地使用开发项目的环境成本进行估值
+
+假设与证明：
+· 人的一切所有活动基于自然环境，因此用GDP总值估测自然贡献
+· 人类对土地的利用是GDP主要来源，因此用GDP总值估计项目土地使用，并且可以通过时间维度估算全球土地使用的环境成本
+· 污染程度与GDP水平正相关，因为工业生产需要在一定时间跨度内以破坏环境为代价
+
+基本模型：增益-污染基本模型（Profit-Pollution primitive model, PPPM）
+· 空气污染=发展中国家空气污染-发达国家空气污染。因为经过工业革命之后发达国家空气污染呈下降趋势，发展中国家相反。其余数据用全球数据
+空气污染指标预处理
+· 空气污染AAP = Developing-AAP  +   Developed-AAP
+
+增益-污染基本模型
+· 特征值：有害垃圾的不当处理(mismanaged wastes, mw); 工业用水GDP等价量(Industrial Water Withdrawl, IWW); 空气污染(Ambient Atmosphere pollution, AAP); 气候变暖(Global Temperature, GP)
+· 标签值：GDP
+
+
+step 1 数据无量纲化 
+- 3+dropout(p=0.1)+1的MLP结构训练出来了，预测精度很高。
+- 需要将多层感知机的隐藏层的权重矩阵
+step 2 构造数据集
+step 3 映射到时间维度 -> 时间维度的映射会产生两个子模型：土地项目效益模型和污染模型且都在时间维度上连续； 两个子模型组成增益-污染基本模型
+
+step 4 基于PPPM在小型社区项目和大型国家项目上通过引入“地区权重(region coefficient, rc)”进行优化，得到Community-PPPM 和 National-PPPM
+
+
