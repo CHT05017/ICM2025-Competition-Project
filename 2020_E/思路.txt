@@ -1,0 +1,39 @@
+记录：
+· 碳达峰 ——> 神经网络模型改造后可以描述出来
+· 社会性质的问题都会有公开数据集
+· 二氧化碳气体 -> 偷换概念 <- 我今天在构造数据集时就偷换概念了hh（微塑料偷换成了水体塑料污染。其合理性在于(Assumptions and justivications)）
+
+
+
+· 关键数据源（两个小时找到）（方法：文献->数据的参考文献->文献->公开数据集）（作为社会性质的问题一定都会有数据集）
+https://ourworldindata.org/plastic-pollution
+· 神经网络的特征在于并非建立和时间的关系，而是找到难以用时间作为自变量的拟合方法，并且为多个指标之间赋予权重
+· 个人完整做一遍下来，感觉最后先列大致框架然后写完公式画完图表最后再往里面填充东西是思路最清晰的
+· 任务一（预测能够在不造成进一步破坏的前提下安全缓解的塑料产品废物的最大量）用神经网络
+
+假设：
+· 每类塑料废物包含种类很多，但是代表性种类能反映塑料废物数量总趋势
+证明：
+· 用极限的方式证明，从而说明权重小的那个指标可以在理想情况下忽略不计
+
+用传统建模方法投射到时间维度上
+
+模拟退火
+
+任务一：
+塑料废物量预测神经网络(Plastic Waste MLP, PWMLP)
+· 特征值：包装塑料废物产量(Packaging of PW, PKPW)、建筑类塑料废物产量(Building of PW, BPW)、PP类聚合物废物产量(PP of PW, PPPW), Fibres类聚合物废物产量(Fibres of PW, FPW)水体塑料废物产量(Aquatics sector of PW, APW)
+· 标签值：塑料废物总产量(Global Plastic Waste, PW)
+· 数据单位都是million tons.
+· 对应使用的表格：
+APW——Platic waste accumulated in auqatic environments;
+
+
+人类塑料处理能力预测神经网络(Plastic Processing MLP, PPMLP)
+· 特征值：回收量(Recycled Waste,RW)、焚烧量(Incinerated Waste, IW)、填埋量(Landfilled Waste, LW)。（由定义，这些都是恰当回收的方式）
+· 标签值：人类总处理塑料垃圾量(Properly Managed Plastic Waste, PMPW)
+· 数据单位都是million tons.
+
+再映射到时间维度。
+【关键】不直接采用函数拟合因变量和t之间的关系是因为直接拟合的方法无法突出因变量和多个自变量之间的权重关系。而深度学习方法可以通过训练方式找到数据之间的权重比例
+· 构造出和时间t的两个模型：（1）塑料废物量预测模型（2）人类塑料处理能力预测模型
