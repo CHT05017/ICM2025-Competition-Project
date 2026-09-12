@@ -1,0 +1,178 @@
+总体要求：
+· 跟踪从森林到农田的栖息地变化
+· 确定一个转换成农田之后的区域随时间变换的模型
+
+自然过程 & 人为决策
+
+
+板块一： 自然过程：(生成对抗)
+任务一：为当前 转换后的（转换成农业生态系统的） 生态系统建模
+· 考虑生产者，消费者， 农业周期，季节性变化对系统的影响
+· 考虑除草剂、杀虫剂等化学品对植物昆虫动物等生态系统稳定性的影响
+
+任务二：物种重新出现
+· 衡量本地物种回归（以时间为变量）对农业生态系统相互作用的影响
+· 加入两种不同物种，举例分析其影响, 这两个物种是引入的新物种
+
+
+难点：
+bring bats into the food web model
+the stability of ecosystems
+
+==================================================================建模思路
+
+核心变量： 生态系统稳定性指标(Agricultral sustainability indicator)
+
+（不er？？？？Glossary全搁我这一部分了）
+
+注意Glossary对有关量的解释
+
+
+任务一：为转换成农业生态系统后的模型建模
+
+Assuptions:
+· 农业生态系统从零开始（先把森林全刨干净）（题干中说which recently took the place of a heavily forested region）
+· 根据Glossary对Agricultural Cycle的定义，假设满足正/余弦函数关系（Growth Phase的AS最大）
+
+增益模型：
+- 前提：下述所有变量基于“不考虑杀虫剂/除草剂的影响”
+
+
+· 标签：农业生态系统的生产力（产出的作物量）
+· 特征：生产者种群数量， 消费者种群数量（具体子变量见Glossary 第二条）、分解者数量，轮作周期（夏天的生物多样性>冬天的生物多样性，不同耕种期同理，y = sin x 来描述）
+
+
+
+
+
+· 预期效果：增益量 = g()
+
+
+衰减模型（使用杀虫剂和除草剂）：
+- 前提：下述所有变量基于“给该生态系统施加除草剂/杀虫剂”
+
+
+· 标签：土壤碳储量数据/作物产量波动性/土地退化指数
+· 特征：杀虫剂用量， 植物数量/种类数量（on plant health）, 昆虫数量(on insect populations), 蝙蝠数量（on bats）
+, 鸟类数量（on bird populations）, 生物种类/......
+
+· 预期效果：对抗量 = f(除草剂量， 生态系统稳定性子变量) 【注意蝙蝠题干是着重强调的他的作用】【估计是负相关关系】
+
+最终能够实现生态
+
+任务二：重新出现的生物对农业地区生物多样性的影响
+· 用杨辉三角 那 一 类 模 型 来模拟这个动态过程（可以可视化，因为题干着重说了那个edge habitats， 强调了地理区域的影响）
+
+
+
+
+
+
+总体的Assumptions: 根据nature那篇文献，低发育程度的生态系统直接由生物多样性来反映生态系统稳定程度。由于农田生态系统属于低发育程度生态系统，所以我们直接考察生物多样性
+
+用神经网络构造攻击模型，在攻击模型中体现人类的决策影响（如杀虫剂的用量等等）
+
+· 用多层感知机的嵌套，用两个多层感知机，让模型学习出那几个权重矩阵
+
+最后在时间维度上去考察问题
+
+
+攻击模型同时会用在第一问和第三问里面， 第三问的攻击函数才是一个凸函数，第一问的攻击函数很有可能是单调的
+
+
+
+
+
+===============================================================开始解题！
+第一题：
+攻击模型输出量: 生物多样性的减少量
+
+香农指数？
+
+要转换到时间维度上
+
+模型构建思路：
+step 1: 数据集
+
+· 标签值：需要预处理, 用z-scores标准化方法
+思路： 
+1. 文献（https://pdf.sciencedirectassets.com/271800/1-s2.0-S0048969723X00588/1-s2.0-S0048969724014359/main.pdf?X-Amz-Security-Token=IQoJb3JpZ2luX2VjEAMaCXVzLWVhc3QtMSJHMEUCIQCy64pnzJnR6O5DHb%2BF89e%2B%2FbHtICl5NVOg5pdvOeAcrwIgT4CjNspLGphI0mJWLZpS27lbhTWPPnfMwe1zB6Z4yCEquwUI%2FP%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARAFGgwwNTkwMDM1NDY4NjUiDDRcfxkoETdytePwESqPBR0RD2ZxlhzbRQY5xbBhHhLYqAYiN69YNqpVG6IODdDNoDMHXtqM%2FmC%2BwO42vL9OAhK9HlbaCCBfzM7jlXoNdwD6AD4Fd%2Bk16lxWW0f3P8sqO2gZeGXzCyIzLKet8oBRxDRu9HyMTXjEl3f6I%2F7lk7EGB4yP5dbQsewW%2BgXxJiCHbC%2FJbG63qZaU17N9XVOfhp9tTUNyaq5qFh3JMKBHO4UOkSfHrb0OZCEJGJY7whsFXYjFNktcS8cgKNkt5jQy%2FNqsyy5vOyAFhV%2Fd6Xk100yOGWGFZzBj53hPKXJPbWOHR1K7BfsZNOrEsL3s1BAKvjxuY4Pcl5fM9hHFNkq0dpufxW%2BhRrxEXhCa4mEND0wrLu8cvvJVspOcOXNVWk8H7x0xli6odbadLYgQDtnaCNf4KISYIpO9LZFQAWcM2if1vHFQc7C%2FcgmKcKCwr5ReCrNnlU8oCzT%2FYZMTbNRnVr3gUOpzjw4AusqkdG9BtPjB2dO8pVoFMeF9AclsAaZrMXWv9ZnoAwmXnfluogpvY1P0NmWuuiIPi1vH%2Bw99oEoWNKXD8QUFcXnkHYa7yrJB6aGgxxHnvWA2mfQ17DJyq%2FLjKfO36aLvAF42GFAJ1ORZkN2h1NYSBAw8sIWY4O%2B%2B3qdnuWc0BWnAlPWw3Qvpr%2B6JZt7bhRT6b8N1fNtSIPTehtH7nq9hcnxL7Onmzrdc4L1YcihlWg02crdFvUH5B8y%2Fbfpzjy3jQpqNZoLzeJ5dnAbsI5eXxdOHm%2FuI2udcyVaSJP11bDGOkdCqY1Qqcnk06hQlQ5r0B99ElZR110wU%2BIiTT%2FyK4pGhM%2BSw2ElkiHxaaBj7Bj9pkRf8NK%2BuWLXSvsDcFmTkJo%2Bbc1oP1FIwtYPMvAY6sQEiQr8sFsA6EIZfLbXSWnyr5xIoiDt6bZCZIqihe0VMY1fP%2FNgFE4Bm1DGU%2FpkkA266ZbHfMCOHLKBrxgJtqHfYe2bgh4aNFhqq2KL5JUQJbxcAGObTFeW%2FCNfJI3PB9c4cDJA3Ri2477O6ArDmDOXoLVf3eQ4p%2BUf9Z6e3rYWbps9SVtjoYGSyC1g5JbbhFmhtge7z%2BOMRGfvOvccqzBFqIkjRJDzJKQATVG6rzwqmIHM%3D&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20250124T034507Z&X-Amz-SignedHeaders=host&X-Amz-Expires=300&X-Amz-Credential=ASIAQ3PHCVTYR2XBKF63%2F20250124%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Signature=cf055c3dc93088ba411845dc8f2d5513752af104b1a1303f69e4c7d8b6ef0fce&hash=69c6938e2fa3c0dbb5a1b1686c53402275c39b75d77c6948cf7d9660ddb6b7b6&host=68042c943591013ac2b2430a89b270f6af2c76d8dfd086a07176afe7c76c2c61&pii=S0048969724014359&tid=spdf-d955fe00-c9eb-4103-a929-ac2117bb3bf7&sid=2553cbe19f1c12447c1ba088e331158c4229gxrqa&type=client&tsoh=d3d3LnNjaWVuY2VkaXJlY3QuY29t&ua=050a5e5f50015e535053&rr=906d0764fd0d2344&cc=cn）的Fig.3.给出了标准氮肥用量和地区物种丰度间的关系，网站（https://ourworldindata.org/grapher/nitrogen-fertilizer-application-per-hectare-of-cropland?tab=chart&country=~OWID_WRL）给出了近20年氮肥用量统计
+2. 用网站数据z-scores标准化成分数，对应到文献指标，最终得到耕地物种丰度损失
+3. 丰度损失是无量纲百分比，基准值是景观农田覆盖率低、氮肥施用量最小的原始植被。
+
+
+
+
+
+· 特征值（单位都是kg/ha）：
+- 杀虫剂量(pesticide)(https://ourworldindata.org/grapher/pesticide-use-per-hectare-of-cropland?tab=chart&country=~OWID_WRL)
+- 化肥量(fertilizer)(https://ourworldindata.org/grapher/fertilizer-use-per-hectare-of-cropland?tab=chart&country=~OWID_WRL)
+- 除草剂（如三嗪类化合物）、杀鼠剂、种子处理、植物生长调节剂（如生长素赤霉素细胞分裂素等）等其它化学物质(chemical dependance)(https://www.fao.org/faostat/zh/#data/RP/visualize)
+
+
+
+Loss of species richness 是核心变量的简写
+
+
+
+任务二：
+·用杨辉三角，
+· 杨辉三角元素和生物量有关(biomass)
+· 回归以后，抵抗力稳定性上升恢复力稳定性下降
+· 用Food Web Model(总的那个)， 构造恢复力和抵抗力函数，求积分
+· 用一个事件给其一个扰动，从生物选秀二的P100那个图出发给答案
+
+
+
+
+
+
+
+任务三：
+第一问：
+· 基本模型会调生产者和消费者的权重，然后再画一个图出来
+· 攻击模型把除草剂那个变量置零, 删除一个变量，重新计算一个LSR函数出来
+· 两个图相减，从生产者和消费者的角度以及从除草剂置零这三个角度，从而得到新的一个图
+· 两个相减得到了一个richness, 代入s41586-018-0627文献那个Fig 2 b 图的U型曲线，定量描述出生态系统稳定性stability.
+· 上述步骤重复，得到去除除草剂之前的一个值，两个相对比
+
+· 用恢复力抵抗力解的话，就需要定量评估
+
+
+第二问：
+· 第一个小问题：用攻击模型，调整一下引入后的模型的二阶导的绝对值的大小，让攻击能力衰减更快
+· 第二个小问题：直接用食物网基本模型去解决问题（这里攻击模型无能为力）
+· 第三个小问题：根瘤菌（交给基本模型）
+、
+
+
+新的思路：
+·第一问只是短期的预测，长期来看的话，杂草称为优势种之后，相对生物多样性会下降，这个趋势会导致稳定性下降。所以在长期的保护措施中我们需要引入蝙蝠。
+·这个需要用一段分析一下
+
+
+
+
+· 关于图7按照比例计算生物量的假设必须在最前面的Assumptions里面提前做出假设。
+
+
+
+
+
+
+· 卷积用图7，按照比例计算生物量。分图层进行卷积操作。每一个图层是不同种类的生物。蝙蝠卷积核，如果在该图层就进行运算，如果不在该图层就不进行运算。
+· 卷积输出的应该是所有物种的Species richness, 这样才可以和那个X形的横轴对应起来
+· 和横轴对应起来之后，认为设置稳定区间，在这个区间之内，认为是稳定的。因为不能是抵抗力/恢复力一方过高/过低
+
+· 竞争权重 大约0.9
+· 捕食权重 大约0.6
+· 促进权重 大约1.2
+· 数据差别可以再大一些
+
+第四题给基本模型来做
+
+
+
+
+
+我之后负责鲁棒性分析。
