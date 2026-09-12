@@ -1,0 +1,305 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% MCM/ICM LaTeX Template %%
+%% 2024 MCM/ICM           %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass[12pt]{article}
+\usepackage{geometry}
+\geometry{left=1in,right=0.75in,top=1in,bottom=1in}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Replace ABCDEF in the next line with your chosen problem
+% and replace 1111111 with your Team Control Number
+\newcommand{\Problem}{ABCDEF}
+\newcommand{\Team}{1111111}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage{newtxtext}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{newtxmath} % must come after amsXXX
+
+\usepackage[pdftex]{graphicx}
+\usepackage{xcolor}
+\usepackage{fancyhdr}
+\lhead{Team \Team}
+\rhead{}
+\cfoot{}
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{definition}{Definition}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+\graphicspath{{.}}  % Place your graphic files in the same directory as your main document
+\DeclareGraphicsExtensions{.pdf, .jpg, .tif, .png}
+\thispagestyle{empty}
+\vspace*{-16ex}
+\centerline{\begin{tabular}{*3{c}}
+	\parbox[t]{0.3\linewidth}{\begin{center}\textbf{Problem Chosen}\\ \Large \textcolor{red}{\Problem}\end{center}}
+	& \parbox[t]{0.3\linewidth}{\begin{center}\textbf{2024\\ MCM/ICM\\ Summary Sheet}\end{center}}
+	& \parbox[t]{0.3\linewidth}{\begin{center}\textbf{Team Control Number}\\ \Large \textcolor{red}{\Team}\end{center}}	\\
+	\hline
+\end{tabular}}
+%%%%%%%%%%% Begin Summary %%%%%%%%%%%
+% Enter your summary here replacing the (red) text
+% Replace the text from here ...
+\begin{center}
+\textcolor{red}{%
+Use this template to begin typing the first page (summary page) of your electronic report. This \newline
+template uses a 12-point Times New Roman font. Submit your paper as an Adobe PDF \newline
+electronic file (e.g. 1111111.pdf), typed in English, with a readable font of at least 12-point type.	\\[2ex]
+Do not include the name of your school, advisor, or team members on this or any page.	\\[2ex]
+Papers must be within the 25 page limit.	\\[2ex]
+Be sure to change the control number and problem choice above.	\\
+You may delete these instructions as you begin to type your report here. 	\\[2ex]
+\textbf{Follow us @COMAPMath on Twitter or COMAPCHINAOFFICIAL on Weibo for the \newline
+most up to date contest information.}
+}
+\end{center}
+% to here
+%%%%%%%%%%% End Summary %%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\clearpage
+\pagestyle{fancy}
+% Uncomment the next line to generate a Table of Contents
+%\tableofcontents 
+\newpage
+\setcounter{page}{1}
+\rhead{Page \thepage\ }
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Model: }
+\hspace{2em}With climate change fueling, buildings with cultural, historical or emotional significance are under threat to be destroyed. To better understand the essentiality of specific buildings and help community managers preserve them, we first identified the most pivotal contributors during value evaluation procedures , 
+\subsection{Identification and Verification of core variables.}
+\hspace{2em}We considered numerous factors, including cultural, economical, and social, as is illustrated in figure \ref{index}
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.7\textwidth]{/figures/index.png}
+	\caption{Schematic of our index system}
+	\label{index}
+\end{figure}
+\subsubsection{Cultural Factors.}
+	\hspace{2em}\textbf{Year Index, YI.} Time-honored buildings usually carry abundant historical information and cultural meanings. Witnessing the altering of eras, they carry the aesthetic orientations of human history. It has been reported that YI $\propto$ cultural values.
+	
+
+	\textbf{Study Documents Index, SDI.} Historical buildings often become hotspots for academic researches (e.g., the Great Wall). It has been acknowledged that a significant restoration of historical sites is often accompanied by substantial increases in relevant research articles, indicating that quantification of published literatures are positively proportional to relics' cultural value.
+	
+	
+	\textbf{Media Research Index, MRI} Social media, owing to its transmissible characteristics,  features profound impacts on public cognition, shaping it into an ideal factor reflecting the cultural values of relics. It is assumed that MRI$ \propto$ value, considering that social's interest and recognition of sites increase by a drastic growth in media reports, manifesting a positive feedback to increases in MRI.
+	
+	
+	\textbf{Investment Cost Index, ICI} Relics, as cohesion of wisdom standing test of times, are endowed with historical significance. Buildings featuring high cultural values generally attract more funds for  restoration and relevant projects. Financial supports from all walks of lives assembles their historical meanings.
+	
+\subsubsection{Economic Factors.}
+	\hspace{2em}\textbf{Tourism Profit Index, TPI} Tourism economy is one of the major sources of regional fiscal revenues. Numerous benefits are included, including visits to famous attractions, consumption on accommodation etc. Symbolic buildings , such as the Forbidden City, often become hotspots for tourist destination, promoting the economic development of local area.\\
+
+	\textbf{Employees in Tourism Index. }Occupational opportunities are created for locals in scenic areas, with commercial centers surrounding buildings contributing to highly-developed retail and cultural industries. Hence, job market structures are optimized and stability for job opportunities have increased. We conduct a correlation analysis on the level of economic growth related to the tourism industry and number of employees. Datas report that the Spearman correlation coefficient between them is 0.835. 
+	\begin{figure}[h]
+		\centering
+		\includegraphics[width=0.7\textwidth]{./figures/Spearman.png}
+		\caption{The Spearman Correlation Trend between Tourism Revenue and NTI in Dunhuang}
+		\label{Spearman correlation}
+	\end{figure}
+	
+	\textbf{Profit of Transportation driven by tourism Index, PTI} Traveling contributed by tourisms also prompts the improvements of transportation capacity and infrastructure. For instance, the Qatar World Cup witness the construction of numerous new roads and stadiums. Accordingly, profits of transportation is calculated as follows:
+	\begin{equation}
+		PTI=\frac{TR}{GDP}\times(AR+RR+RTR)
+	\end{equation}
+	where AR, RR, RTR respectively refer to airline revenue and railway counterparts,  while GDP is the gross domestic product of local area.
+	
+	\textbf{Profits of Industry driven by tourism Index} A industrial chain analysis is conducted to evaluate the impact of maintaining and constructing historical buildings on construction industry, culminating in a linear model considering the upstream supply chain and the direct consumption chain.\\
+	\begin{equation}
+		\Delta M=\alpha\times\Delta T1+\beta\times\Delta T2
+	\end{equation}
+	
+\subsubsection{Society Value Index}
+	\textbf{Educational meanings.} Historical buildings inspire people's emotional resonance and enrich their aesthetic experiences. Through interacting with such relics, individuals embrace deeper recognition to their own civilizations, thus strengthening their cultural identities. To quantify such impact, we take PEI as an indicator.
+	
+	\textbf{Tourists Satisfaction.} People's feelings cannot be ignored. These emotional connections make relics surpass the conventional concept of architectures to entities filled with life and meaning. Such "architectural memory" enriches the connotations of heritages and is considered a important factor.
+
+\subsection{Construction of the Evaluation Model}
+\hspace{2em}By utilizing the method TOPSIS combined with EWM-CRITIC to get the score of primary indicators, namely culture, econimic and society, and then supplimented by AHP to get their weight,consequently the index reveals the sophisticated hidden value to some extend, the higher score one building obtains, the more valuable it possesses.\\
+\begin{figure}[t]
+	\centering
+	\includegraphics[width=0.5\textwidth]{./figures/flowchart.png}
+	\caption{Flow chart of the evaluation model}
+	\label{flowchart}
+\end{figure}
+\textbf{$STEP1$.Construction of evaluation matrix $R$ based on secondary indicators}\\
+\begin{equation}
+	\textbf{R}=
+	\begin{pmatrix}
+		x_{11} & \dots & x_{1n}\\
+		\vdots & \ddots & \vdots\\
+		x_{m1} & \dots & x_{mn}\\
+	\end{pmatrix}
+\end{equation}
+%第二层数据的矩阵
+\hspace{2em}Where $m$ is the number of pre-selected evaluation individuals; $n$ is the number of secondary evaluation indicators.\\
+\textbf{$STEP2$.Data Normalization}\\
+\hspace{2em}Different evaluation indicators often have different dimensions and dimension units, and such a situation will affect the results of data analysis. In order to eliminate the dimensional influence among the indicators, it is necessary to carry out data normalization so that different data can be comparable.
+For the “benefit attributes type”, we use the following normalization:
+\begin{equation}
+	\Tilde{x_{ij}}=\frac{{x_{ij}}-x_{min}}{x_{max}-x_{min}}
+\end{equation}
+\textbf{$STEP3$.Calculate the contrast intensity $S_j$}\\
+\hspace{2em}In the CRITIC method, the standard deviation is used to represent the contrast intensity of indicators. The larger the standard deviation is, the greater the numerical difference of the indicator will be, which means that more information is reflected. Therefore, the stronger the evaluation intensity of the indicator is, and more weights should be assigned to this indicator. The standard deviation is calculated as follows:
+\begin{equation}
+	\begin{cases}
+		\Bar{x_j}=\frac{1}{m}\sum_{i=1}^m x_{ij} \\
+		\boldsymbol{S_j}=\sqrt{\frac{\sum_{i=1}^m {x_{ij}-\Bar{x_j}}^2}{m-1}}
+	\end{cases}
+\end{equation}
+\textbf{$STEP4$.Calculate the conflict intensity $I_j$}\\
+\hspace{2em}The correlation coefficient represents the strength of the correlation between indicators. If an indicator has a stronger correlation with other indicators, then the conflict between this indicator and other indicators will be smaller, more of the same information will be reflected, and the evaluation intensity of the indicator will be lower. Therefore, the weight assigned to this indicator should be reduced. Therefore, the conflict intensity can be calculated by:
+\begin{equation}
+	\boldsymbol{I_j}=\sum_{i=1}^m (1-r_{ij})
+\end{equation}
+\textbf{$STEP5$.Calculate the weight $W_j$ of secondary indicator}\\
+The larger the value $C_j$, the greater information capacity of the indicator is, the more weight should be assigned to it and the larger the value $C_j$.The weight can be calculated as follows:
+\begin{equation}
+	\begin{cases}
+		\boldsymbol{C_j}=\boldsymbol{S_j}\times\boldsymbol{I_j} \\
+		\boldsymbol{W_j}=\frac{\boldsymbol{C_j}}{\sum_{j=1}^n \boldsymbol{C_j}}
+	\end{cases}
+\end{equation}
+\textbf{$STEP6$.Refined by using EWM}\\
+\hspace{2em}Although the CRITIC method can effectively take into account the volatility and correlation among indicator data, it fails to consider the degree of dispersion among indicator data. Therefore, the \textbf{EWM} can be used to improve the CRITIC method so that all these three attributes can be fully considered.We refined it as follows:
+%\begin{equation}
+
+%\end{equation}
+\hspace{2em}After the works above, we used AHP by constructing a judgement matrix to get weights of the three primary indicators:$$\sigma=(0.4932,0.3397,0.1671)$$\\
+\hspace{2em}The weight of each primary and secondary indicators are shown in the figures below.
+\begin{figure}
+	\centering
+	\includegraphics[width=0.7\textwidth]{./figures/weights.png}
+	\caption{The weights of each indicator}
+	\label{weights}
+\end{figure}
+And the final scores are:
+\begin{equation}
+	CV=CVI\times\sigma_1+EVI\times\sigma_2+SVI\times\sigma_3
+\end{equation}
+\hspace{2em}In addition to evaluating the value of historic buildings, we also construct a quantitative model of costs of protection by combining some factors in the insurance model. Because the protection cost of historical buildings is mainly affected by natural disasters, in order to simplify the model, we remove some unnecessary interference factors, so that the protection cost of historical buildings is related to the occurrence probability of different types of disasters and the loss caused by disasters.We set  \textit{m} as the region where the historical building is located,\textit{i}  as the type of disasters occurring in the region in the past 20 years, and \textit{j} as the occurrence frequency of a certain type of disasters. Then,the $ R_{ij}^{m} $ matrix is constructed to represent the occurrence frequency of type \textit{i} disasters in the region \textit{m} in the past 20 years.The $C_{ij}^{m}$ matrix represents the total risk loss of type \textit{i} disasters in 20 years in region \textit{m}.Based on the factors related to the insurance model from the first question, each element of the matrix is determined.
+\begin{equation}
+	c_{ij}^{m}=\omega_{i}\times NDL_{m}
+\end{equation}
+where $\omega_{i}$ refers to the ratio of the costs of preservation of historic buildings to total losses from natural disasters.After collecting the data of natural disasters in historic building areas in many regions of the world over the years, we get the probability of occurrence risk in region \textit{m} is:
+\begin{equation}
+	P_m = \frac{\sum\limits_{i} R_{ij}^{m}}{\sum\limits_{m}\sum\limits_{i} R_{ij}^{m}} 
+\end{equation}
+where $P_{m}$ refers to the probability of natural disaster risk in region \textit{m}.
+\begin{equation}
+	S_{m}=\sum\limits_{i}c_{ij}^{m}
+\end{equation}
+where $S_{m}$ refers to the total losses suffered by all types of natural disasters in region \textit{m}.After normalization, we get that the cost factor of historic building preservation is:
+\begin{equation}
+	cv_{m}=\frac{P_{m} \times S_{m}}{\sum\limits_{m}(P_{m}\times S_{m})}
+\end{equation}
+\subsection{Preservation assessment via GE matrix}
+\hspace{2em}In order to put forward our preservation measures more targeted, we carefully considered the relationship between the comprehensive value(CV) of the building and costs of protection(CP) and adopt GE matrix, which is designed to help enterprises to define themselves and make business decisions.For local community leaders, when it comes to judging whether an important building should be protected and what level of protection measures should be taken, it can be determined by CP and CV, which coincides with the core idea of the GE Matrix.So, we use CV as the horizontal axis and CP as the vertical axis to contribute the GE matrix.Both the calculated CP and CV are normalized between (0,1) and are divided into three grades.\\
+\begin{table}[htbp]
+	\centering
+	\setlength{\tabcolsep}{25pt}
+	\begin{tabular}{cccc}
+		\toprule[2pt]
+		the value of CV & Level & the value of CP & Level\\
+		\midrule[1pt]
+		0$\sim$0.3 & Low & 0$\sim$0.3 & Low\\
+		0.4$\sim$0.7 & Medium & 0.4$\sim$0.7 & Medium\\
+		0.7$\sim$1 & High & 0.7$\sim$1 & High\\
+		\bottomrule[2pt]
+	\end{tabular}
+	\caption{Index classification}
+	\label{classification}
+\end{table}
+\begin{figure}
+	\centering
+	\includegraphics[width=0.7\textwidth]{./figures/GE_matrix.png}
+	\caption{Preservation GE matrix}
+	\label{GE}
+\end{figure}
+\hspace{2em}The preservation GE matrix is visualized above.The matrix is divided into nine parts since both the CV and CP is divided into three levels, and we will elaborate on what measures should be taken under different circumstances.
+\begin{enumerate}
+	\item When the CP index is between 0.7 and 1, and the CV index is between 0 and 0.3(Region \uppercase\expandafter{\romannumeral 9}). The value of the building is relatively low while the protection cost is too high. It is advisable to consider whether there are other buildings with higher value that need to be protected or other projects with greater development potential that can be carried out. It is not recommended to invest a large amount of resources for protection. 
+	\item When both CP and CV are between 0.7 and 1(Region \uppercase\expandafter{\romannumeral 3}). Although the protection cost of the buildings is extremely high, their value is also awfully high or even immeasurable. These buildings should be regarded as the most urgent protection targets and be protected regardless of resources to ensure that their important values are safeguarded. We suggest \textbf{relocating them for off-site protection}, that is, moving these buildings to places with a lower risk of being damaged and doing a good job in maintenance. 
+	\item In other conditions, such as Region \uppercase\expandafter{\romannumeral 2},Region \uppercase\expandafter{\romannumeral 5}, Region \uppercase\expandafter{\romannumeral 8}, though their values are different, the risks they are exposed to are all at a moderate level. It is recommended to conduct daily maintenance and repair. This will not consume excessive resources and can reduce the irresistible losses caused when disasters occur. Moreover, it is recommended to give priority to protecting the buildings with higher values before disasters happen. 
+\end{enumerate}
+
+\section{Case study:Dunhuang}
+\hspace{2em}To apply our models to practice, we select Dunhuang China to conduct the assessment of risks and values.Dunhuang, an ancient city on the Silk Road, is renowned for the Mogao Caves in Dunhuang, which is a world cultural heritage site and an impressive demonstration of art and civilization. However, the time honored caves has been constantly facing the threats of natural disasters.Even worse, with the intensification of climate change, the Mogao Caves are facing a new threat - heavy rainfall. As a result, the humidity has soared, the paintings have peeled off and the caves have collapsed. These have greatly increased the protecting costs(CP).\\
+\hspace{2em}By collecting relevant data of Dunhuang from 2003 to 2023, we used our model to evaluate the ratio of the comprehensive value to the protection cost of historical buildings in Dunhuang. Meanwhile, based on reasonable assumptions and simplifications, we conducted a non-linear regression fitting of the protection costs of Dunhuang buildings. According to the fitting results and combined with the relevant factors in the insurance model, we obtained a more accurate maintenance cost function for Dunhuang buildings. Furthermore, we determined the predicted positions in different years on the GE matrix, so as to put forward corresponding measures and suggestions.
+\subsection{I Assessment}
+\hspace{2em}Through our preservation model, we can get CV scores of Mogao Caves and then we normalized them. Due to the high frequency of natural disasters in the Dunhuang region, a large amount of fund is invested in the renovation and protection every year. Therefore, it is reasonable to consider the costs of protection equivalent to risks. We carried out min-max normalization to process CP datas, which are collected on the official documents, and them obtain the CP scores of Mogao Caves.Finally, we get:
+\begin{equation}
+	I=\frac{CV}{CP}
+\end{equation}
+\hspace{2em}Where I is the ratio of the comprehensive value to the costs of protection.\\
+\hspace{2em}After substituting the data from 2003 to 2023 into the calculation, we obtained the I value for 21 years. In order to put forward reasonable and accurate protection suggestions, we used the \textbf{Exponential Smoothing Method} to fit the value-cost ratio and predict the future change trend. The prediction result is shown in the figure and we found that I could be described in a linear function.\\
+\begin{figure}
+	\centering
+	\begin{subfigure}{0.5\textwidth}
+		\includegraphics[width=\textwidth]{./figures/ESM.png}
+		\caption{Simulation Fitting and Prediction of I by ESM}
+		\label{ESM}
+	\end{subfigure}
+	\begin{subfigure}{0.42\textwidth}
+		\includegraphics[width=\textwidth]{./figures/prediction.png}
+		\caption{Linear function of predicted I values}
+		\label{prediction}
+	\end{subfigure}
+	\caption{Prediction of I after 2024}
+\end{figure}
+\subsection{Non-Linear fitting of CP}
+\hspace{2em}Considering that datas we collected are insufficient and the inherent limitations of the ESM, we conducted non-linear fitting on the protection costs of Mogao Caves to further optimize the model and provide more accurate and reasonable predictions. The fitting results are shown in the figure. \\
+\begin{figure}
+	\centering
+	\includegraphics[width=0.5\textwidth]{./figures/costs_fitting.png}
+	\caption{Non-linear fitting of CP}
+	\label{fittingCP}
+\end{figure}
+\hspace{2em}We obtained that it approximately conforms to the \textbf{Logistic Regression}. The following is an analysis and elaboration on this result:\\
+\textbf{Explanation:}  Natural disasters occur frequently in the Dunhuang and once it happens, the community need to restore and reinforce the maintenance them. We get:\\
+\begin{equation}
+	CP=BR+IM+\theta
+\end{equation}
+\hspace{2em}Where \textbf{BC} refers to Building Restoration costs and \textbf{IC} represents Infrastructure Maintenance costs.\\
+\hspace{2em}With the deterioration of the global climate, the frequency of natural disasters has been increasing year by year, and the number of renovations on historical buildings has also been rising year by year. However, as the number of maintenance operations increases, the annual growth rate $r$ of maintenance costs will be declining, and eventually the protection costs tend to stabilize. Therefore, borrowing the idea of \textbf{Population Prediction Model}, we can list the following differential equation:\\
+\begin{equation}
+	\begin{cases}
+		\frac{dx}{dt}=r(1-\frac{x}{x_m})x\\
+		x(t_0)=x_0\\
+	\end{cases}
+\end{equation}
+\hspace{2em}Where $x$ is costs of protection, $x_m$ is stabilized costs of protection, $r$ is the growth rate of costs of protections in the initial year.\\
+\hspace{2em}As a result, we can obtain the solution:\\
+\begin{equation}
+	x(t)=\frac{x_m}{1+(\frac{x_m}{x_0}-1)e^{-r(t-t_0)}}
+\end{equation}
+\hspace{2em}However, the relationship between costs of protection and time is complex, which is related to multiple factors such as regional population density, GDP, and policy implementation. Meanwhile, we combined it with the relevant factors in the insurance model and improved the solution of the original equation to:\\
+\begin{equation}
+	x(t)=\frac{x_m}{1+(\frac{x_m}{x_0}-1)e^{-r(t-t_0)}}+f(x_1,x_2,\dots,x_n)
+\end{equation}
+\hspace{2em}By calculating the difference between the actual losses and the logistic predicted values, we can determine the impact magnitude of other factors, and determine the precise prediction equation for maintenance costs through regression fitting. \\
+\hspace{2em}In order to put forward effective suggestions for the protection of the Mogao Caves and make out a schedule, we combined the GE matrix in the protection model, adopted the value-cost ratio \textbf{I} to determine the slope of the straight line.Predict CP by formula(30), we could obtaine the position of the Mogao Caves in the matrix in evey certain year so that corresponding protection measures can be tracked.\\
+\begin{figure}
+	\centering
+	\includegraphics[width=\textwidth]{./figures/solutions.png}
+	\caption{Locations of Mogao Caves in GE matrix each year}
+	\label{locations}
+\end{figure}
+\hspace{2em}Among them, the values from 2020 to 2023 are for verification with real data, and those from 2023 to 2031 are the predicted results, as shown in the figure. 
+\subsection{Targeted measures in different periods}
+\hspace{2em}It can be seen from the GE matrix that the risk level of the Mogao Caves is not too high, which benefits from the contributions made by numerous experts represented by Mrs. Fan Jinshi and the government. However, as time passes, the risk is still rising year by year, which coincides with the reality of frequent extreme weather events caused by climate change.\\
+\hspace{2em}Next, we will put forward specific protection measures for the Mogao Caves for different periods.\\
+(1) \textbf{From 2020 to 2023}, the Mogao Caves continuously carried out sandstorm prevention and control projects and maintained ecological security. It also conducted partial maintenance on the grottoes and continuously promoted the "Digital Dunhuang" project. These efforts not only effectively protected the Mogao Grottoes but also expanded its cultural influence.\\
+(2) \textbf{Risks to the Mogao Grottoes in the future}: In line with the trend of global climate change, the temperature in northwest China has risen significantly, and the frequency of heavy precipitation events may increase as well, resulting in a higher level of warm and wet conditions in the northwest region. This will accelerate the deterioration process of the grotto murals, except ongoing climate impacts, short-term extreme weather events such as sudden rainstorms may also have a devastating impact on cultural relics.\\
+(3) \textbf{From 2024 to 2027}, climate change is an irresistible force. For the Dunhuang government, it should regard the Mogao Caves as a key protected object, increase the input of manpower and resources, utilize modern technologies, cooperate with international frontiers, build good systems for daily maintenance, monitoring and early warning, and post-disaster restoration, and enhance the ability of the Mogao Grottoes to resist erosion caused by extreme weather and sudden disasters.\\
+(4) \textbf{From 2027 to 2031}, the comprehensive value of the Mogao Caves is climbing year by year, which means that if the protection work is carried out successfully, the cultural influence of the Mogao Caves will become much greater. However, it also means that the number of tourists attracted by its reputation will increase significantly. The destructive effects of excessive population density and climate impacts on the Mogao Grottoes are similar in principle. Both cause damage to the walls due to the increase in warmth and humidity. The managers of the Mogao Caves should control the tourist flow and strengthen the protection of the Mogao Grottoes. Meanwhile, they should continue to promote the construction of the "Digital Dunhuang" to drive the sustainable development of the Mogao Grottoes. 
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\end{document}
+\end
